@@ -31,16 +31,18 @@ from .nanopore_read import NanoporeRead
 from .version import __version__
 
 
-#Camille's addition 
-from .barcoding import *
+#Get barcoding.py to build barcodes
+from .barcoding import formatBarcodes
 
 
 def main():
-    
     args = get_arguments()
+    ##Beep beep construction
     
-    #ADAPTERS
-    ADAPTERS = formatBarcodes(args.plasmid_seq, 24)
+    ADAPTERS = formatBarcodes(args.plasmid_seq, 24)           
+    
+    ##Beep beep construction
+    #ADAPTERS = formatBarcodes(args.plasmid_seq, 24)
 
     
     reads, check_reads, read_type = load_reads(args.input, args.verbosity, args.print_dest,
@@ -125,12 +127,14 @@ def get_arguments():
                                               'Control the binning of reads based on barcodes '
                                               '(i.e. barcode demultiplexing)')
     
-    ##################Camille Testing Automated Barcode Generation V
+    ##################
     
     barcode_group.add_argument('-BC', '--plasmid_seq', type=str,
-                               help='Plasmids to barcode')   
-    
-    ##################Camille Testing Automated Barcode Generation ^
+                               help='Plasmids to barcode')
+#     barcode_group.add_argument('--iterations', action='store_true',default=False,
+#                                help='This is used when running Porechop through bulkPlasmidSeq,' 
+#                                     'cuts down time constructing barcodes by reading from existing file')
+    ##################
         
     barcode_group.add_argument('-b', '--barcode_dir',
                                help='Reads will be binned based on their barcode and saved to '
@@ -693,7 +697,7 @@ def output_reads(reads, out_format, output, read_type, verbosity, discard_middle
         
         ###############Add a feature that prints details about the porechop run to textFile beside the reads CM
         
-        detailsOut = open(os.path.join(barcode_dir, 'porechop_run_details.txt'), 'a+')
+        detailsOut = open(os.path.join(barcode_dir, 'run_details.txt'), 'a+')
         
         detailsOut.write(print_table(display_adapter_set_results(matching_sets = matching_sets,
                                      verbosity = 1, print_dest = print_dest, ADAPTERS = ADAPTERS),

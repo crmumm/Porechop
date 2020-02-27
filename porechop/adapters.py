@@ -74,39 +74,39 @@ class Adapter(object):
 #             end_sequence=('Barcode_2_end', 'TTTTTTTTGGGGGGGGCCCCCCCCAAAAAAAA'))
 
 
-ADAPTERS = [#Adapter('SQK-NSK007',
-                    #start_sequence=('SQK-NSK007_Y_Top', 'AATGTACTTCGTTCAGTTACGTATTGCT'),
-                    #end_sequence=('SQK-NSK007_Y_Bottom', 'GCAATACGTAACTGAACGAAGT')),
+ADAPTERS = [Adapter('SQK-NSK007',
+                    start_sequence=('SQK-NSK007_Y_Top', 'AATGTACTTCGTTCAGTTACGTATTGCT'),
+                    end_sequence=('SQK-NSK007_Y_Bottom', 'GCAATACGTAACTGAACGAAGT')),
     
             Adapter('Rapid',
                     start_sequence=('Rapid_adapter',
                                     'GTTTTCGCATTTATCGTGAAACGCTTTCGCGTTTTTCGTGCGCCGCTTCA')),
             
-            #Adapter('RBK004_upstream',
-                    #start_sequence=('RBK004_upstream', 'AATGTACTTCGTTCAGTTACGGCTTGGGTGTTTAACC')),
+            Adapter('RBK004_upstream',
+                    start_sequence=('RBK004_upstream', 'AATGTACTTCGTTCAGTTACGGCTTGGGTGTTTAACC')),
 
 
-            #Adapter('SQK-MAP006',
-                    #start_sequence=('SQK-MAP006_Y_Top_SK63',    'GGTTGTTTCTGTTGGTGCTGATATTGCT'),
-                    #end_sequence=  ('SQK-MAP006_Y_Bottom_SK64', 'GCAATATCAGCACCAACAGAAA')),
+            Adapter('SQK-MAP006',
+                    start_sequence=('SQK-MAP006_Y_Top_SK63',    'GGTTGTTTCTGTTGGTGCTGATATTGCT'),
+                    end_sequence=  ('SQK-MAP006_Y_Bottom_SK64', 'GCAATATCAGCACCAACAGAAA')),
 
-            #Adapter('SQK-MAP006 short',
-                    #start_sequence=('SQK-MAP006_Short_Y_Top_LI32',    'CGGCGTCTGCTTGGGTGTTTAACCT'),
-                    #end_sequence=  ('SQK-MAP006_Short_Y_Bottom_LI33', 'GGTTAAACACCCAAGCAGACGCCG')),
+            Adapter('SQK-MAP006 short',
+                    start_sequence=('SQK-MAP006_Short_Y_Top_LI32',    'CGGCGTCTGCTTGGGTGTTTAACCT'),
+                    end_sequence=  ('SQK-MAP006_Short_Y_Bottom_LI33', 'GGTTAAACACCCAAGCAGACGCCG')),
 
 
             # The PCR adapters are used both in PCR DNA kits and some cDNA kits.
-            #Adapter('PCR adapters 1',
-                    #start_sequence=('PCR_1_start', 'ACTTGCCTGTCGCTCTATCTTC'),
-                    #end_sequence=  ('PCR_1_end',   'GAAGATAGAGCGACAGGCAAGT')),
+            Adapter('PCR adapters 1',
+                    start_sequence=('PCR_1_start', 'ACTTGCCTGTCGCTCTATCTTC'),
+                    end_sequence=  ('PCR_1_end',   'GAAGATAGAGCGACAGGCAAGT')),
 
-            #Adapter('PCR adapters 2',
-                    #start_sequence=('PCR_2_start', 'TTTCTGTTGGTGCTGATATTGC'),
-                    #end_sequence=  ('PCR_2_end',   'GCAATATCAGCACCAACAGAAA')),
+            Adapter('PCR adapters 2',
+                    start_sequence=('PCR_2_start', 'TTTCTGTTGGTGCTGATATTGC'),
+                    end_sequence=  ('PCR_2_end',   'GCAATATCAGCACCAACAGAAA')),
 
-            #Adapter('PCR adapters 3',
-                    #start_sequence=('PCR_3_start', 'TACTTGCCTGTCGCTCTATCTTC'),
-                    #end_sequence=  ('PCR_3_end',   'GAAGATAGAGCGACAGGCAAGTA')),
+            Adapter('PCR adapters 3',
+                    start_sequence=('PCR_3_start', 'TACTTGCCTGTCGCTCTATCTTC'),
+                    end_sequence=  ('PCR_3_end',   'GAAGATAGAGCGACAGGCAAGTA')),
 
             
             # 1D^2 kit adapters are interesting. ONT provided the following sequences on their site:
@@ -115,22 +115,22 @@ ADAPTERS = [#Adapter('SQK-NSK007',
             # But when looking at actual reads, I found two parts. The first corresponds to one end
             # of the provided sequences (through slightly different):
             
-            #Adapter('1D^2 part 1',
-                    #start_sequence=('1D2_part_1_start', 'GAGAGGTTCCAAGTCAGAGAGGTTCCT'),
-                    #end_sequence=  ('1D2_part_1_end',   'AGGAACCTCTCTGACTTGGAACCTCTC')),
+            Adapter('1D^2 part 1',
+                    start_sequence=('1D2_part_1_start', 'GAGAGGTTCCAAGTCAGAGAGGTTCCT'),
+                    end_sequence=  ('1D2_part_1_end',   'AGGAACCTCTCTGACTTGGAACCTCTC')),
             # and the second part corresponds to the other end, combined with a bit of standard 1D
             # adapter:
             
-            #Adapter('1D^2 part 2',
-                    #start_sequence=('1D2_part_2_start', 'CTTCGTTCAGTTACGTATTGCTGGCGTCTGCTT'),
-                    #end_sequence=  ('1D2_part_2_end',   'CACCCAAGCAGACGCCAGCAATACGTAACT')),
+            Adapter('1D^2 part 2',
+                    start_sequence=('1D2_part_2_start', 'CTTCGTTCAGTTACGTATTGCTGGCGTCTGCTT'),
+                    end_sequence=  ('1D2_part_2_end',   'CACCCAAGCAGACGCCAGCAATACGTAACT')),
             # The middle part of the provided sequences is less common, so I've left it out of the
             # adapter sequences here.
 
 
-            #Adapter('cDNA SSP',
-                    #start_sequence=('cDNA_SSP',     'TTTCTGTTGGTGCTGATATTGCTGCCATTACGGCCGGG'),
-                    #end_sequence=  ('cDNA_SSP_rev', 'CCCGGCCGTAATGGCAGCAATATCAGCACCAACAGAAA')),
+            Adapter('cDNA SSP',
+                    start_sequence=('cDNA_SSP',     'TTTCTGTTGGTGCTGATATTGCTGCCATTACGGCCGGG'),
+                    end_sequence=  ('cDNA_SSP_rev', 'CCCGGCCGTAATGGCAGCAATATCAGCACCAACAGAAA')),
 
             
             # Some barcoding kits (like the native barcodes) use the rev comp barcode at the start
@@ -188,11 +188,8 @@ ADAPTERS = [#Adapter('SQK-NSK007',
             Adapter('Barcode pMP (reverse)',
                     start_sequence=('BC08_rev', 'CTACGGCGTGCAGTGCTTCAGCCG'),
                     end_sequence=('BC08', 'CGGCTGAAGCACTGCACGCCGTAG')),
-
-    
-           ]
+            ]
            
-
 def make_full_native_barcode_adapter(barcode_num):
     barcode = [x for x in ADAPTERS if x.name == 'Barcode ' + str(barcode_num) + ' (reverse)'][0]
     start_barcode_seq = barcode.start_sequence[1]
